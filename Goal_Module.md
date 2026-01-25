@@ -153,4 +153,8 @@ The module utilizes a Global Exception Handler to return standardized JSON error
       | analytic_code| <-----------+----------------------------------------+
       +--------------+
 ```
+## Error Handling
+This project is proprietary software developed by Spatium Nexum.
 
+## Support
+For issues, questions, or contributions, please contact the development team or open an issue on the repository.
