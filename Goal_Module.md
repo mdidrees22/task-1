@@ -38,44 +38,150 @@ Authorization: Bearer <your_jwt_token> //user login token
 ### create goal (post)
 http://localhost:8081/goal/create
 
-Body
+Body for personal goal
 ```
 {
-    "title": "Deep Sleep Recovery",
-    "duration": "14 days",
+    "title": "Summit Mount Everest (or a Seven Summit)",
+    "duration": "Ongoing",
     "daily_check_in": true,
-    "relevant_biomarkers": ["Melatonin", "Cortisol"],
-    "goal_start": "2026-01-25",
-    "goal_end": "2026-02-08",
-    "theme": "Circadian Rhythm",
+    "relevant_biomarkers": ["Hypoxic Tolerance"],
+    "goal_start": "2026-01-19",
+    "goal_end": "2026-12-31",
+    "theme": "Physical Excellence",
     "tracker_type": "BINARY",
-    "goal_type": "biomarker",
+    "goal_type": "personal",
     "status": "IN_PROGRESS",
-    "goal_image": "https://example.com/sleep.png"
+    "goal_image": "@/assets/goal_images/goal_7.png",
+    "tracking_data": []
 }
 ```
 Response //check goal table in pg admin
 ```json
 {
-    "goal_id": 10,
-    "title": "Deep Sleep Recovery",
-    "duration": "14 days",
-    "daily_check_in": true,
-    "relevant_biomarkers": [
-        "Melatonin",
-        "Cortisol"
-    ],
-    "goal_start": "2026-01-25",
-    "goal_end": "2026-02-08",
-    "theme": "Circadian Rhythm",
+    "goal_id": 4,
+    "goalTitle": "Summit Mount Everest (or a Seven Summit)",
+    "sinceDays": "8",
+    "days": null,
+    "daysCompleted": null,
+    "last5DaysProgress": "00000",
+    "goalImage": "@/assets/goal_images/goal_7.png",
+    "completed": false,
+    "checkInQuestion": "Did you train altitude simulation or technical skills today?",
+    "about": "Engineering a physiology that thrives on scarcity to conquer the vertical limit.",
+    "inAppNotificationMessage": null,
+    "lastValue": null,
+    "themeIcons": [],
+    "theme": "Physical Excellence",
     "archetype": "explorer",
+    "goal_type": "personal",
+    "status": "IN_PROGRESS",
+    "userAnalyticCode": "GCO",
+    "tracking_data": [],
+    "goal_start": "2026-01-19",
+    "goal_end": "2026-12-31"
+}
+```
+Body for archetype goal
+```
+{
+    "title": "Novelty Exposure",
+    "duration": "31 days",
+    "daily_check_in": true,
+    "relevant_biomarkers": [],
+    "goal_start": "2026-01-01",
+    "goal_end": "2026-01-31",
+    "theme": "Hormone Balance",
+    "tracker_type": "BINARY",
+    "goal_type": "archetype",
+    "status": "IN_PROGRESS",
+    "goal_image": "@/assets/goal_images/goal_1.png",
+    "tracking_data": [
+        {"date": "2026-01-25", "status": true},
+        {"date": "2026-01-26", "status": false}
+    ]
+}
+```
+Response //check goal table in pg admin
+```
+{
+    "goal_id": 5,
+    "goalTitle": "Novelty Exposure",
+    "sinceDays": null,
+    "days": "31",
+    "daysCompleted": "12",
+    "last5DaysProgress": "10011",
+    "goalImage": "@/assets/goal_images/goal_1.png",
+    "completed": false,
+    "checkInQuestion": "Have you engaged in 15 minutes of divergent thinking exercises today?",
+    "about": null,
+    "inAppNotificationMessage": "Keep your mind flexible. Did you do your divergent thinking exercise?",
+    "lastValue": null,
+    "themeIcons": [
+        "CalmIcon"
+    ],
+    "theme": "Hormone Balance",
+    "archetype": "explorer",
+    "goal_type": "archetype",
+    "status": "IN_PROGRESS",
+    "userAnalyticCode": "GCO",
+    "tracking_data": [
+        {
+            "date": "2026-01-25",
+            "status": true
+        },
+        {
+            "date": "2026-01-26",
+            "status": false
+        }
+    ],
+    "goal_start": "2026-01-01",
+    "goal_end": "2026-01-31"
+}
+```
+Body for biomarker goal
+```
+{
+    "title": "Tyrosine Loading",
+    "duration": "8 days",
+    "daily_check_in": true,
+    "relevant_biomarkers": ["Dopamine", "Tyrosine"],
+    "goal_start": "2026-01-19",
+    "goal_end": "2026-01-27",
+    "theme": "Cognitive Performance",
     "tracker_type": "BINARY",
     "goal_type": "biomarker",
     "status": "IN_PROGRESS",
-    "goal_image": "https://example.com/sleep.png",
-    "tracking_data": null,
+    "goal_image": "@/assets/goal_images/goal_4.png",
+    "tracking_data": []
+}
+```
+Response //check goal table in pg admin
+```
+{
+    "goal_id": 6,
+    "goalTitle": "Tyrosine Loading",
+    "sinceDays": "8",
+    "days": null,
+    "daysCompleted": null,
+    "last5DaysProgress": "00000",
+    "goalImage": "@/assets/goal_images/goal_4.png",
+    "completed": false,
+    "checkInQuestion": "Have you consumed your specific protein source 60 mins before your session?",
+    "about": null,
+    "inAppNotificationMessage": "Ready to brainstorm? Did you take your Tyrosine 60 mins ago?",
+    "lastValue": "45 µmol/L",
+    "themeIcons": [
+        "BoltIcon",
+        "EyeIcon"
+    ],
+    "theme": "Cognitive Performance",
+    "archetype": "explorer",
+    "goal_type": "biomarker",
+    "status": "IN_PROGRESS",
     "userAnalyticCode": "GCO",
-    "userEmail": "idrees@spatiumnexum.com"
+    "tracking_data": [],
+    "goal_start": "2026-01-19",
+    "goal_end": "2026-01-27"
 }
 ```
 
