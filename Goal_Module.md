@@ -39,7 +39,8 @@ Authorization: Bearer <your_jwt_token> //user login token
 http://localhost:8081/goal/create
 
 Body for personal goal
-```
+```bash
+
 {
     "title": "Summit Mount Everest (or a Seven Summit)",
     "duration": "Ongoing",
@@ -82,7 +83,7 @@ Response //check goal table in pg admin
 }
 ```
 Body for archetype goal
-```
+```bash
 {
     "title": "Novelty Exposure",
     "duration": "31 days",
@@ -102,7 +103,7 @@ Body for archetype goal
 }
 ```
 Response //check goal table in pg admin
-```
+```bash
 {
     "goal_id": 5,
     "goalTitle": "Novelty Exposure",
@@ -139,7 +140,8 @@ Response //check goal table in pg admin
 }
 ```
 Body for biomarker goal
-```
+```bash
+
 {
     "title": "Tyrosine Loading",
     "duration": "8 days",
@@ -197,10 +199,12 @@ http://localhost:8081/goal/{id} (Replace {id} with the goal_id from Test 1)
 Body (JSON)
 ```bash
 {
-    "title": "Bio-Hacking Deep Sleep",
+    "title": "Novelty Exposure",
     "status": "IN_PROGRESS",
     "tracking_data": [
-        { "date": "2026-01-25", "completed": true, "note": "Slept 8 hours" }
+        { "date": "2026-01-25", "status": true },
+        { "date": "2026-01-26", "status": false },
+        { "date": "2026-01-27", "status": true } 
     ]
 }
 ```
